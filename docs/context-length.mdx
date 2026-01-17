@@ -48,17 +48,17 @@ This change applies only to the current session.
 
 To persist the updated context length, save the model configuration under a new name:
 
-`/save <model>_64k`
+```/save <model>_64k```
 
-For example, if your model is named `gemma3:12b', you could save it
+For example, if your model is named `gemma3:12b`, you could save it
 
 as:
 
-`/save gemma3:12b_64k`
+```/save gemma3:12b_64k```
 
 From then on, run the saved model:
 
-`ollama run gemma3:12b_64k`
+```ollama run gemma3:12b_64k```
 
 ### Check allocated context length and model offloading
 For best performance, use the maximum context length for a model, and avoid offloading the model to CPU. Verify the split under `PROCESSOR` using `ollama ps`.
