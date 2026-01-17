@@ -30,11 +30,11 @@ OLLAMA_CONTEXT_LENGTH=32000 ollama serve
 ```
 
 #### Chat Mode
-The context length can also be adjusted while running a model interactively.
+The context length can also be adjusted while running a model interactively (via `ollama run`).
 
 Start the model:
 ```
-ollama run model
+ollama run <model>
 ```
 
 Inside the interactive prompt, set the context length:
@@ -52,9 +52,7 @@ To persist the updated context length, save the model configuration under a new 
 /save <model>_64k
 ```
 
-For example, if your model is named `gemma3:12b`, you could save it
-
-as:
+For example, if your model is named `gemma3:12b`, you could save it as:
 
 ```
 /save gemma3:12b_64k
