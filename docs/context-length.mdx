@@ -34,7 +34,7 @@ The context length can also be adjusted while running a model interactively.
 
 Start the model:
 ```
-ollama run <model>
+ollama run model
 ```
 
 Inside the interactive prompt, set the context length:
@@ -44,16 +44,21 @@ Inside the interactive prompt, set the context length:
 
 This change applies only to the current session.
 
-#### Saving the context permanently
-To persist the updated context length, save the model configuration under a new name, for example:
-```
-/save model_32k
-```
+#### Saving the configuration permanently
 
-Use the saved model name from then on:
-```
-ollama run model_32k
-```
+To persist the updated context length, save the model configuration under a new name:
+
+`/save <model>_64k`
+
+For example, if your model is named `gemma3:12b', you could save it
+
+as:
+
+`/save gemma3:12b_64k`
+
+From then on, run the saved model:
+
+`ollama run gemma3:12b_64k`
 
 ### Check allocated context length and model offloading
 For best performance, use the maximum context length for a model, and avoid offloading the model to CPU. Verify the split under `PROCESSOR` using `ollama ps`.
